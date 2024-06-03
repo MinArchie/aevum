@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}
+    Home
+{% endblock %}
+{% block main %}
+<br>
+<br>
+<div class="container">
+    <div class="container__left">
+        <h1 style="color: white;">Experience the Eras</h1>
+        <p style="color: white;">Don't believe us? </p>
+        {% if session.user_id %}
+            <div class="container__btn">
+                <a href="/home">
+                    <button class="btn">DISCOVER</button>
+                </a>
+            </div>
+        {% else %}
+            <div class="container__btn">
+                <a href="/register">
+                    <button class="btn">START NOW</button>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="container__right">
+        <div class="content">
+            <h4>time travelling is real!</h4>
+            <h2>EVER WONDERED WHAT THE PAST AND FUTURE LOOK LIKE?</h2>
+            <h3>an achievement Einstein is jealous about ;)</h3>
+            <p>
+                Have a taste of the past, present, and future by sampling our app!
+                Imagine stepping into the past, present, and future all at once.
+                Aveum is a social networking app where users can choose an era of 
+                their liking and chat, post, and discover people of similar intrests.
+                
+            </p>
+        </div>
+        <div class="socials">
+            <span>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+            </span>
+            <span>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+            </span>
+            <span>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+            </span>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}
+</head>
+<body>
+    <div>
+        {% include 'nav.html' %}
+        <div class="win-r">
+            <h1 class="mb-4">All Posts</h1>
+            
+            <div class="post-div">
+                {% for post in posts %}
+                <div class="post">
+                    <div class="post-title">
+                        <div class="post-avt">
+                            <a href="{{ url_for('view_post', post_id=post['id']) }}">
+                                <img src="/static/uploads/avatar.webp" alt="Avatar">
+                            </a>
+                        </div>
+                        <div class="post-user">
+                            <div class="post-username">
+                                <span class="post-username-name">
+                                    <a href="{{ url_for('view_post', post_id=post['id']) }}">{{ post['uname'] }}</a>
+                                </span>
+                            </div>
+                            <div class="post-date">
+                                <span>{{ post['created_at'] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont">
+                        {% if post['image'] %}
+                        <div class="post-title">
+                            <span class="post-user">
+                                <a href="{{ url_for('view_post', post_id=post['id']) }}">{{ post['title'] }}</a>
+                            </span>
+                        </div>
+                        <div class="post-img">
+                            <img src="{{ url_for('static', filename='uploads/' ~ post['image']) }}" class="popup-img" alt="Image">
+                        </div>
+                        {% endif %}
+                        <div class="post-text">
+                            <span>{{ post['content'][:100] }}...</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-image">
+        <span id="popup-span">&#10006;</span>
+        <img src="path/to/large-image.jpg" alt="Popup Image">
+    </div>
+
+    <script src="/static/JS/popup-img.js"></script>
+</body>
+</html>

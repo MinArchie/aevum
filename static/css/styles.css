@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #d6ccc7;
+  --text-dark: #2c2724;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.btn {
+  outline: none;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(30,30,30);
+}
+
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color); /* Define your primary color here */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 9; /* Ensure the nav bar sits above other elements */
+}
+
+/* Logo styling */
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark); /* Define your text color here */
+  padding-right: 900px;
+}
+
+.nav__logo a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from .nav__logo */
+}
+
+/* Hamburger menu button styles (for mobile devices) */
+.nav__menu__btn {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-dark); /* Inherit color from .nav__logo */
+  cursor: pointer;
+  margin-left: 1rem; /* Adjust margin as needed */
+}
+
+.nav__links {
+  position: absolute;
+  top: 100%; /* Positioned off-screen initially */
+  left: 0;
+  width: 100%;
+  padding: 1rem; /* Adjust padding as needed */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color); /* Match nav background color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  z-index: 10; /* Ensure links appear above content */
+}
+
+.nav.open .nav__links { /* When the nav is opened */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav__links a {
+  font-weight: 600;
+  color: var(--text-dark); /* Inherit color from .nav__logo */
+  text-decoration: none;
+  margin-bottom: 1rem; /* Add some spacing between links */
+}
+
+.nav__links a:hover {
+  color: var(--text-light); /* Define hover color for links (lighter shade) */
+}
+
+/* Styles for user login/logout links (optional) */
+.nav__user-links {
+  display: flex; /* Group login/logout links */
+}
+
+
+
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--text-dark);
+}
+
+.nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem; 
+  }
+
+.nav__links {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--text-dark);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.nav__links a:hover {
+  color: var(--white);
+}
+
+.nav__btns {
+  display: none;
+}
+
+.container {
+  width: 4000px;
+  height: 500px;
+  margin: auto;
+  padding: 0rem 0;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: 0rem;
+  overflow: hidden;
+}
+
+.container__left {
+  padding-inline: 0rem;
+  text-align: center;
+  padding-right: 2rem;
+}
+
+.container__left h1 {
+  margin-bottom: 0rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 4.5rem;
+  color: var(--text-dark);
+}
+
+.container__left .btn {
+  padding: 1rem 2rem;
+  letter-spacing: 2px;
+  color: var(--white);
+  background-color: rgb(95, 36, 36);
+  border-radius: 5rem;
+}
+
+.container__left .btn:hover {
+  color: var(--text-dark);
+  background-color: var(--primary-color);
+}
+
+.container__right {
+  position: relative;
+  isolation: isolate;
+  padding-left: 8rem;
+  padding-right: 0;
+}
+
+
+.container__form {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    gap: 2rem;
+    width: 400px;
+}
+
+.container__form .btn {
+    padding: 1rem 2rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    background-color: rgb(95, 36, 36);
+    border-radius: 5rem;
+  }
+  
+  .container__form .btn:hover {
+    color: var(--text-dark);
+    background-color: var(--primary-color);
+  }
+
+.container__right::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  transform-origin: left;
+  height: 80%;
+  background-color: rgb(95, 36, 36);
+  border-radius: 1rem;
+  z-index: -1;
+
+  animation: show 0.75s 0.25s ease-in-out forwards;
+}
+
+.error-container {
+    text-align: center;
+    border: 1px solid red;
+    background-color: rgba(253, 187, 187, 0.5); 
+    padding: 10px; 
+    margin: 0 auto;
+    width: 20%;
+    color: rgb(114, 43, 43);
+}
+
+
+
+
+
+@keyframes show {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc(100% - 1rem);
+  }
+}
+
+
+.content {
+  text-align: justify;  /* Justify text to fill width */
+  font-size: 1rem;  /* Adjust font size as needed */
+}
+
+
+.content h4 {
+  font-size: 0.9rem; /* Increased font size from 1rem */
+  font-weight: 500;
+  color: GREY;
+}
+
+.content h2 {
+  margin-bottom: 0.2rem;
+  font-size: 1.4rem; /* Increased font size from 2rem */
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.content h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem; /* Increased font size from 1rem */
+  font-weight: 600;
+  color: white;
+}
+
+.content p {
+  line-height: 1.75rem;
+  font-size: 1rem; /* Increased font size from 0.8rem */
+  color: white;
+}
+
+.location {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  background-color: var(--primary-color);
+  border: 10px solid var(--white);
+  border-bottom: none;
+}
+
+.location span {
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.socials {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socials a {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+
+@media (width > 768px) {
+  nav {
+    position: static;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo a {
+    color: var(--text-dark);
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .nav__links a,
+  .nav__links a:hover {
+    color: var(--text-dark);
+  }
+
+  .nav__btns {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav__btns .btn {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    background-color: transparent;
+  }
+
+  .container {
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .container__left {
+    text-align: left;
+  }
+}
+
+@media (width > 1024px) {
+  .container__right {
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+
+  .container__right::before {
+    bottom: unset;
+    top: 0;
+    height: 90%;
+  }
+
+
+  .tent-1 {
+    width: calc(100% + 10rem);
+    max-width: 325px;
+    transform: translate(-2rem, 2rem);
+  }
+
+  .tent-2 {
+    max-width: 200px;
+    transform: translate(4rem, -1rem);
+  }
+
+  .content {
+    padding-block: 5rem;
+    text-align: left;
+    max-width: 400px;
+    margin-inline-start: unset;
+  }
+}

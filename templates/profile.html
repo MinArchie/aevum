@@ -1,0 +1,67 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,900&display=swap');
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/static/css/home_styles.css">
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    <div class="popup-image">
+        <div id="popup-span">
+            <span>&times;</span>
+        </div>
+        <img src="" alt="">
+    </div>
+
+    <div class="win-r">
+        <h1 class="mb-4">{{ user }}'s Profile</h1>
+        
+        <div class="post-div">
+            {% for post in posts %}
+            <div class="post">
+                <div class="post-title">
+                    <div class="post-avt">
+                        <a href="{{ url_for('view_post', post_id=post['id']) }}">
+                            <img src="/static/uploads/avatar.webp" alt="Avatar">
+                        </a>
+                    </div>
+                    <div class="post-user">
+                        <div class="post-username">
+                            <span class="post-username-name">
+                                <a href="{{ url_for('view_post', post_id=post['id']) }}">{{ post['uname'] }}</a>
+                            </span>
+                        </div>
+                        <div class="post-date">
+                            <span>{{ post['created_at'] }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-cont">
+                    {% if post['image'] %}
+                    <div class="post-title">
+                        <span class="post-user">
+                            <a href="{{ url_for('view_post', post_id=post['id']) }}">{{ post['title'] }}</a>
+                        </span>
+                    </div>
+                    <div class="post-img">
+                        <img src="{{ url_for('static', filename='uploads/' ~ post['image']) }}" class="popup-img" alt="Image">
+                    </div>
+                    {% endif %}
+                    <div class="post-text">
+                        <span>{{ post['content'][:100] }}...</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="/static/JS/popup-img.js"></script>
+</body>
+</html>

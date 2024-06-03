@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post['title'] }}</title>
+    <link rel="stylesheet" href="/static/css/home_styles.css">
+</head>
+<body>
+    <div class="view-post">
+        <h1>{{ post['title'] }}</h1>
+        <p><strong>Posted on:</strong> {{ post['created_at'] }} by <strong>{{ post['uname'] }}</strong></p>
+        <div class="post-content-container">
+            <p>{{ post['content'] }}</p>
+            {% if post['image'] %}
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='uploads/' + post['image']) }}" class="img-fluid" alt="Post Image">
+            </div>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('home') }}" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</body>
+</html>

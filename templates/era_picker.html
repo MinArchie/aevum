@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/static/css/era_styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/home"> Aveum</a></div>
+    </header>
+    <div class="slider">
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+                <img src="https://images2.alphacoders.com/103/thumb-1920-1036931.jpg">
+                <div class="content">
+                    <p>future</p>
+                    <h2>Cyberpunk</h2>
+                    <p>
+                        Ever wanted to experience the ambiance of the future? 
+                        Select <b style="color: red;">Cyberpunk</b> to immerse yourself in a futuristic 
+                        world where you can post, chat, and roleplay on social media 
+                        like never before. Connect with like-minded anonymous individuals and 
+                        dive into the future of social interaction.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src="https://wallpapercave.com/wp/wp7818612.jpg">
+                <div class="content">
+                    <p>medieval</p>
+                    <h2>England</h2>
+                    <p>
+                        Ever wanted to experience the ambiance of medieval England? 
+                        Select <b style="color: red;">Medieval England</b> to immerse yourself in a world of 
+                        knights, castles, and ancient lore. Post, chat, and experience 
+                        a social media journey back in time with fellow history 
+                        enthusiasts.
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdna.artstation.com/p/assets/images/images/000/188/578/large/jorge-carlos-gonzalez-shot02-still.jpg?1443931433">
+                <div class="content">
+                    <p>ancient</p>
+                    <h2>Greece</h2>
+                    <p>
+                        Ever wanted to experience the ambiance of Ancient Greece? 
+                        Select <b style="color: red;">Ancient Greece</b> to immerse yourself in a world of 
+                        mythology, philosophy, and classical beauty. Post, chat, 
+                        and experience social media in a time of legendary heroes 
+                        and great thinkers with fellow enthusiasts of history.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+
+        <div class="dropdown-container">
+            <form action="/era_picker" method="POST"> <!-- Update form action -->
+                <select id="theme-selector" name="select-theme"> <!-- Add name attribute -->
+                    <option value="cyberpunk">Cyberpunk</option>
+                    <option value="medieval">Medieval England</option>
+                    <option value="ancient">Ancient Greece</option>
+                </select>
+                <button type="submit" id="select-theme">Select Theme</button> <!-- Use button within form -->
+            </form>
+        </div>
+        
+
+        
+
+        <div class="thumbnail">
+            <div class="item active">
+                <img src="https://images2.alphacoders.com/103/thumb-1920-1036931.jpg">
+                <div class="content">
+                    Cyberpunk
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://wallpapercave.com/wp/wp7818612.jpg">
+                <div class="content">
+                    England
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdna.artstation.com/p/assets/images/images/000/188/578/large/jorge-carlos-gonzalez-shot02-still.jpg?1443931433">
+                <div class="content">
+                    Greece
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>
